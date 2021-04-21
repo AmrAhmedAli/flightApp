@@ -1,0 +1,102 @@
+{
+  "schema": "airports",
+  "string": "hello world",
+  "data": [
+    {
+      "id": 1,
+      "name": "Egypt, Cairo International Airport (CAI)",
+      "svg": "../assets/egypt.png"
+    },
+    {
+      "id": 2,
+      "name": "United States, Boston (BOS)",
+      "svg": "../assets/us.svg"
+    },
+    {
+      "id": 3,
+      "name": "United Arab Emirates, Dubai (DXB)",
+      "svg": "../assets/uae.png"
+    },
+    {
+      "id": 4,
+      "name": "United Arab Emirates, Abu Dhabi (BUS)",
+      "svg": "../assets/uae.png"
+    },
+    {
+      "id": 5,
+      "name": "Qatar, Doha, Hamad International Airport (DOH)",
+      "svg": "../assets/qatar.png"
+    },
+    {
+      "id": 6,
+      "name": "Netherlands, Amsterdam (AMS)",
+      "svg": "../assets/holand.png"
+    },
+    {
+      "id": 7,
+      "name": "Germany, Frankfurt (FRA)",
+      "svg": "../assets/germany.webp"
+    },
+    {
+      "id": 8,
+      "name": "Germany, Munich (MUC)",
+      "svg": "../assets/germany.webp"
+    },
+    {
+      "id": 9,
+      "name": "Kuwait, Kuwait International Airport (KWI)",
+      "svg": "../assets/kuwait.png"
+    },
+    {
+      "id": 10,
+      "name": "Zanzibar, Abeid Amani Karume International Airport (ZNZ)",
+      "svg": "../assets/zanzibar.svg"
+    },
+    { "id": 11, "name": "Japan, Tokyo (TYO)", "svg": "../assets/japan.svg" },
+    {
+      "id": 12,
+      "name": "Japan, Osaka Kansai International Airport (KIX)",
+      "svg": "../assets/japan.svg"
+    },
+    {
+      "id": 13,
+      "name": "Saudi Arabia, Riyadh King Khalid International Airport (RUH)",
+      "svg": "../assets/saudi.png"
+    },
+    {
+      "id": 14,
+      "name": "Maldives, Velana International Airport (MLE)",
+      "svg": "../assets/maldives.png"
+    },
+    {
+      "id": 15,
+      "name": "France, Lyon-Saint Exupéry Airport (LYS)",
+      "svg": "../assets/france.png"
+    },
+    {
+      "id": 16,
+      "name": "Brazil, São Paulo Airport (GRU)",
+      "svg": "../assets/brazil.svg"
+    },
+    {
+      "id": 17,
+      "name": "Switzerland, Zürich (ZRH)",
+      "svg": "../assets/switzerland.png"
+    },
+    {
+      "id": 18,
+      "name": "Russia, Moscow Sheremetyevo International Airport (SVO)",
+      "svg": "../assets/russia.png"
+    },
+    {
+      "id": 19,
+      "name": "Ghana, Kotoka International Airport (ACC)",
+      "svg": "../assets/ghana.jpg"
+    },
+    {
+      "id": 20,
+      "name": "South Africa, Cape Town Airport (CPT)",
+      "svg": "../assets/south_africa.png"
+    }
+  ]
+}

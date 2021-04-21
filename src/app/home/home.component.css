@@ -1,0 +1,152 @@
+.secondary-page {
+  display: flex;
+  flex-direction: column;
+  margin-top: 7rem;
+  margin-left: 10%;
+  margin-right: 10%;
+}
+.main-container {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+}
+.first-row {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  border-bottom: 1.5px solid #e6e0e0;
+  padding-bottom: 1rem;
+  margin-bottom: 1rem;
+}
+.second-row {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  margin-bottom: 4rem;
+}
+.third-row {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  flex-wrap: wrap;
+}
+.search-btn {
+  color: white;
+  background-color: rgb(211, 6, 6);
+  width: 13rem;
+}
+.title__heading {
+  color: #333;
+  float: left;
+  font-size: 30px !important;
+  font-family: helvetica, arial, sans-serif !important;
+  letter-spacing: 0;
+  line-height: 35px !important;
+  padding: 0;
+  margin-bottom: 1rem;
+}
+.arrows {
+  display: flex;
+  width: fit-content;
+  padding: 0.2rem;
+  position: relative;
+  padding: 10px;
+  margin-bottom: 0.7rem;
+}
+.airport-name {
+  font-size: smaller;
+  display: inline-block;
+}
+.airport-svg {
+  width: 1rem;
+  margin-right: 0.3rem;
+}
+.airport-search {
+  width: 98%;
+  height: 2.5rem;
+  border: none !important;
+  font-size: large;
+  padding-left: 1rem;
+}
+.airport-search:focus {
+  outline: none !important;
+  border: none !important;
+}
+.selection-description {
+  display: flex;
+  flex-direction: column;
+}
+.depart {
+  display: flex;
+  width: fit-content;
+  padding: 0.2rem;
+  position: relative;
+  padding: 10px;
+  box-shadow: 0px 0px 4px #a8a8a8 inset;
+  margin-bottom: 0.7rem;
+}
+.description {
+  display: flex;
+  justify-content: center;
+  font-size: x-small;
+  margin-top: -1rem !important;
+}
+.airplane-from {
+  background: url(/assets/from_plane.png) center center no-repeat;
+  padding-right: 3rem;
+  margin-right: 0.6rem;
+  border-right: solid 1px #b3b3b3;
+  padding-top: 0.4rem;
+  padding-bottom: 0.4rem;
+}
+.airplane-to {
+  background: url(/assets/to_plane.png) center center no-repeat;
+  padding-right: 3rem;
+  margin-right: 0.6rem;
+  border-right: solid 1px #b3b3b3;
+  padding-top: 0.4rem;
+  padding-bottom: 0.4rem;
+}
+.calendar {
+  background: url(/assets/calendar.png) center center no-repeat;
+  padding-right: 3rem;
+  margin-right: 0.6rem;
+  border-right: solid 1px #b3b3b3;
+  padding-top: 0.4rem;
+  padding-bottom: 0.4rem;
+}
+.example-tab-icon {
+  margin-right: 8px;
+}
+::ng-deep .mat-form-field-underline {
+  display: none;
+}
+::ng-deep .mat-form-field-infix {
+  border-top: none;
+}
+::ng-deep .mat-form-field-wrapper {
+  padding-bottom: 0;
+}
+::ng-deep .mat-form-field-appearance-legacy .mat-form-field-wrapper {
+  padding-bottom: 0;
+}
+
+::ng-deep .mat-form-field-appearance-fill .mat-form-field-flex {
+  background-color: transparent;
+}
+::ng-deep .mat-form-field-appearance-fill .mat-form-field-flex {
+  border-radius: 4px 4px 0 0;
+  padding: 0 !important;
+}
+::ng-deep .mat-form-field-appearance-fill .mat-form-field-infix {
+  padding: 0 !important;
+}
+::ng-deep .mat-tab-header {
+  margin-bottom: 0.5rem;
+}
+::ng-deep .mat-tab-group.mat-primary .mat-ink-bar,
+.mat-tab-nav-bar.mat-primary .mat-ink-bar {
+  background-color: rgb(211, 6, 6);
+}

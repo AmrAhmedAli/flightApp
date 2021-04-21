@@ -1,0 +1,257 @@
+.secondary-page {
+  display: flex;
+  flex-direction: column;
+  margin-top: 7rem;
+  margin-left: 10%;
+  margin-right: 10%;
+}
+.flights__heading {
+  position: relative;
+  font-size: 30px;
+  z-index: 1;
+  overflow: hidden;
+  text-align: center;
+  color: #333;
+  margin-bottom: 0.5rem;
+}
+.flights__heading:before,
+.flights__heading:after {
+  position: absolute;
+  top: 60%;
+  overflow: hidden;
+  width: 37%;
+  height: 2.5px;
+  content: "\a0";
+  background-color: #e6e0e0;
+  margin-left: 2%;
+}
+.flights__heading:before {
+  margin-left: -38%;
+  text-align: center;
+}
+.sub__head {
+  font-weight: lighter;
+  font-size: large;
+}
+.airplane-from {
+  background: url(/assets/flight_plane.png) center center no-repeat;
+  padding-right: 3rem;
+  margin-right: 0.3rem;
+  padding-top: 0.4rem;
+  padding-bottom: 0.4rem;
+}
+.second-row {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  margin-bottom: 3rem;
+}
+.example-card {
+  padding: 0 !important;
+  box-shadow: 0 1px 5px rgb(0 0 0 / 10%);
+  width: 40%;
+}
+.card-header {
+  padding: 16px 0px 16px 0px;
+}
+::ng-deep .mat-card-header-text {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.card-title {
+  font-weight: bold;
+  margin-bottom: 0 !important;
+}
+.card-title-right {
+  text-align: right;
+  margin-top: 0 !important;
+  margin-bottom: 0 !important;
+  font-size: 12px;
+  align-self: center;
+}
+.card-body {
+  background-color: #fcfcfc;
+  padding: 16px;
+  box-shadow: 0px 3px 3px #a8a8a8 inset;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  height: 50px;
+}
+.flight-from {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+}
+.flight-duration {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+}
+.flight-to {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+}
+
+.transport {
+  width: 177px;
+  text-align: left;
+  position: relative;
+  margin-top: -2px;
+}
+.infographic {
+  float: left;
+  margin: 0;
+  text-align: center;
+  position: relative;
+}
+.transport img {
+  position: relative;
+  vertical-align: middle;
+  border: 0;
+  width: 34px;
+  border-width: 0px;
+}
+.transport:after {
+  content: "";
+  background: #bbb;
+  border-radius: 10px;
+  right: -2px;
+  top: 12px;
+  width: 10px;
+  height: 10px;
+  position: absolute;
+}
+.infographic:before {
+  content: "";
+  border: solid 1px rgba(187, 187, 187, 0.5);
+  position: absolute;
+  width: 81%;
+  top: 14px;
+  right: 0;
+}
+.depart-airport {
+  font-size: 25px;
+}
+.arrival-airport {
+  font-size: 25px;
+}
+.depart-time {
+  font-size: 20px;
+  font-weight: bold;
+  color: rgb(83, 83, 83);
+}
+.arrival-time {
+  font-size: 20px;
+  font-weight: bold;
+  color: rgb(83, 83, 83);
+}
+.block-details {
+  display: flex;
+  flex-direction: row;
+  margin-bottom: 1rem;
+}
+.categories {
+  width: 60%;
+  margin-left: 1.5%;
+  display: flex;
+}
+.category-card {
+  padding: 0 !important;
+  box-shadow: none;
+  border-top: 3px solid green;
+  border-right: 1px solid rgb(228, 228, 228);
+  border-left: 1px solid rgb(228, 228, 228);
+  border-bottom: 1px solid rgb(228, 228, 228);
+  width: 33.33%;
+  cursor: pointer !important;
+  border-radius: 0;
+}
+.category-card-business {
+  padding: 0 !important;
+  box-shadow: none;
+  border-top: 3px solid rgb(0, 0, 219);
+  border-right: 1px solid rgb(228, 228, 228);
+  border-left: 1px solid rgb(228, 228, 228);
+  border-bottom: 1px solid rgb(228, 228, 228);
+  width: 33.33%;
+  cursor: pointer !important;
+  border-radius: 0;
+}
+.category-card-first {
+  padding: 0 !important;
+  box-shadow: none;
+  border-top: 3px solid red;
+  border-right: 1px solid rgb(228, 228, 228);
+  border-left: 1px solid rgb(228, 228, 228);
+  border-bottom: 1px solid rgb(228, 228, 228);
+  width: 33.33%;
+  cursor: pointer !important;
+  border-radius: 0;
+}
+.category-card:hover {
+  background-color: rgb(252, 252, 252);
+}
+.category-card-business:hover {
+  background-color: rgb(252, 252, 252);
+}
+.category-card-first:hover {
+  background-color: rgb(252, 252, 252);
+}
+.category-header {
+  padding: 16px 0px 8px 0px;
+}
+.category-card-title {
+  font-weight: bold;
+  margin-bottom: 0 !important;
+  font-size: medium;
+  color: green;
+}
+.category-card-title-business {
+  font-weight: bold;
+  margin-bottom: 0 !important;
+  font-size: medium;
+  color: rgb(0, 0, 219);
+}
+.category-card-title-first {
+  font-weight: bold;
+  margin-bottom: 0 !important;
+  font-size: medium;
+  color: red;
+}
+.category-body {
+  padding: 16px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  height: 58px;
+}
+.category-content {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  width: 100%;
+  height: 50px;
+}
+.category-currency {
+  font-size: medium;
+}
+.category-price {
+  font-weight: bold;
+  font-size: 25px;
+}
+.category-description-economy {
+  font-size: smaller;
+  color: green;
+}
+.category-description-business {
+  font-size: smaller;
+  color: rgb(0, 0, 219);
+}
+.category-description-first {
+  font-size: smaller;
+  color: red;
+}

@@ -1,0 +1,33 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  transition: all 0.3s ease-out;
+}
+
+header {
+  display: flex;
+  background-color: white;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  right: 0;
+  z-index: 17;
+  box-shadow: 1px 1px 10px #000;
+}
+.logo {
+  width: 4rem;
+  filter: drop-shadow(2px 4px 6px black);
+}
+.col-content {
+  width: 100%;
+  margin-left: 20%;
+  margin-right: 20%;
+}
+.secondary-page {
+  display: flex;
+  flex-direction: column;
+  margin-top: 7rem;
+  margin-left: 10%;
+  margin-right: 10%;
+}

@@ -1,0 +1,100 @@
+<div class="secondary-page">
+  <div class="flights__heading">
+    <label class="airplane-from"></label>
+    Outbound,
+    <label class="sub__head">{{ flight_head }} </label>
+  </div>
+  <div class="second-row">
+    <div style="width: 33.333%">{{ flight_date }}</div>
+    <div style="width: 33.333%; text-align: center">
+      All times are displayed in GMT
+    </div>
+    <div style="width: 33.333%; text-align: right">
+      {{ view_trips.length }} Options
+    </div>
+  </div>
+  <div
+    class="third-row"
+    *ngFor="let trip of view_trips; let i = index"
+    [attr.data-index]="i"
+  >
+    <div class="block-details">
+      <mat-card class="example-card">
+        <mat-card-header class="card-header">
+          <mat-card-title class="card-title">{{ i + 1 }}</mat-card-title>
+          <mat-card-title class="card-title-right">{{
+            trip.plane
+          }}</mat-card-title>
+        </mat-card-header>
+
+        <mat-card-content class="card-body">
+          <div class="flight-from">
+            <div class="depart-airport">{{ trip.from_airport }}</div>
+            <div class="depart-time">{{ trip.from_time }}</div>
+          </div>
+          <div class="flight-duration">
+            <div class="duration-content">{{ trip.duration }}</div>
+            <div class="duration-img">
+              <div class="infographic">
+                <div class="transport">
+                  <img src="../assets/depart.png" />
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="flight-to">
+            <div class="arrival-airport">{{ trip.to_airport }}</div>
+            <div class="arrival-time">{{ trip.to_time }}</div>
+          </div>
+        </mat-card-content>
+      </mat-card>
+      <div class="categories">
+        <mat-card class="category-card">
+          <mat-card-header class="category-header">
+            <mat-card-title class="category-card-title">Economy</mat-card-title>
+          </mat-card-header>
+
+          <mat-card-content class="category-body">
+            <div class="category-content">
+              <div class="category-currency">EGP</div>
+              <div class="category-price">{{ trip.economy_price }}</div>
+              <div class="category-description-economy">Lowest price</div>
+            </div>
+          </mat-card-content>
+        </mat-card>
+        <mat-card class="category-card-business">
+          <mat-card-header class="category-header">
+            <mat-card-title class="category-card-title-business"
+              >Business</mat-card-title
+            >
+          </mat-card-header>
+
+          <mat-card-content class="category-body">
+            <div class="category-content">
+              <div class="category-currency">EGP</div>
+              <div class="category-price">{{ trip.business_price }}</div>
+              <div class="category-description-business">More comfortable</div>
+            </div>
+          </mat-card-content>
+        </mat-card>
+        <mat-card class="category-card-first">
+          <mat-card-header class="category-header">
+            <mat-card-title class="category-card-title-first"
+              >First</mat-card-title
+            >
+          </mat-card-header>
+
+          <mat-card-content class="category-body">
+            <div class="category-content">
+              <div class="category-currency">EGP</div>
+              <div class="category-price">{{ trip.first_price }}</div>
+              <div class="category-description-first">
+                Private and luxurious
+              </div>
+            </div>
+          </mat-card-content>
+        </mat-card>
+      </div>
+    </div>
+  </div>
+</div>
