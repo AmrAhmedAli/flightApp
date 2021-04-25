@@ -1,5 +1,8 @@
 <div class="secondary-page">
-  <h1 class="title__heading">Book your flight!</h1>
+  <div style="background: #ffffff url('../../assets/background.jpg')no-repeat 20% 40%;height: 90vh;width: 100%;background-size:cover"></div>
+  <div class="book-title">
+    Book a trip
+  </div>
   <mat-card class="search">
     <mat-tab-group [(selectedIndex)]="tabIndex" mat-align-tabs="center">
       <mat-tab [disabled]="true">
@@ -13,183 +16,202 @@
       <mat-tab>
         <ng-template mat-tab-label>
           <mat-icon class="example-tab-icon">moving</mat-icon>
-          One way
+          One way 
         </ng-template>
-        <div class="main-container">
-          <mat-chip selected color="warn" style="padding: 0.5rem">
-            1- Error! <br />
-          </mat-chip>
-          <div>
-            <h3>Where and when</h3>
-          </div>
-          <div class="first-row">
-            <div class="depart">
-              <label class="airplane-from"></label>
-              <mat-form-field [floatLabel]="'never'">
-                <mat-label>Departure airport</mat-label>
-                <mat-select (selectionChange)="selectFromAirport($event.value)">
-                  <input
-                    class="airport-search"
-                    placeholder="Search"
-                    (keyup)="onFromKey($event.target.value)"
-                  />
-                  <mat-option *ngIf="search_from_null"
-                    ><h1 class="airport-name">No airports available</h1>
-                  </mat-option>
-                  <mat-option
-                    *ngFor="let airport of view_from_airports"
-                    [value]="airport.id"
-                    style="min-width: max-content"
+        <form [formGroup]="searchForm" (ngSubmit)="search(searchForm.value)">
+          <mat-card-content>
+            <div class="main-container">
+              <mat-chip class = "error-message" selected color="warn" style="padding: 0.5rem">
+                1- Error! <br />
+              </mat-chip>
+              <div>
+                <h3>Where and when</h3>
+              </div>
+              <div class="first-row">
+                <div class="depart">
+                  <label class="airplane-from"></label>
+                  <mat-form-field [floatLabel]="'never'">
+                    <mat-label>Departure airport</mat-label>
+                    <mat-select 
+                    formControlName="from_airport"
+                    id="from_airport"
+                    (selectionChange)="selectFromAirport($event.value)">
+                      <input
+                        class="airport-search"
+                        placeholder="Search"
+                      />
+                      <mat-option *ngIf="search_from_null"
+                        ><h1 class="airport-name">No airports available</h1>
+                      </mat-option>
+                      <mat-option
+                        *ngFor="let airport of view_from_airports"
+                        [value]="airport.id"
+                        style="min-width: max-content"
+                      >
+                        <img class="airport-svg" src="{{ airport.svg }}" />
+                        <h1 class="airport-name">
+                          {{ airport.name }}
+                        </h1>
+                      </mat-option>
+                    </mat-select>
+                  </mat-form-field>
+                </div>
+                <div class="arrows">
+                  <mat-icon class="example-tab-icon" style="font-size: xx-large"
+                    >swap_horiz</mat-icon
                   >
-                    <img class="airport-svg" src="{{ airport.svg }}" />
-                    <h1 class="airport-name">
-                      {{ airport.name }}
-                    </h1>
-                  </mat-option>
-                </mat-select>
-              </mat-form-field>
-            </div>
-            <div class="arrows">
-              <mat-icon class="example-tab-icon" style="font-size: xx-large"
-                >swap_horiz</mat-icon
-              >
-            </div>
-            <div class="depart">
-              <label class="airplane-to"></label>
-              <mat-form-field [floatLabel]="'never'">
-                <mat-label>Arrival airport</mat-label>
-                <mat-select (selectionChange)="selectToAirport($event.value)">
-                  <input
-                    class="airport-search"
-                    placeholder="Search"
-                    (keyup)="onToKey($event.target.value)"
-                  />
-                  <mat-option *ngIf="search_to_null"
-                    ><h1 class="airport-name">No airports available</h1>
-                  </mat-option>
-                  <mat-option
-                    *ngFor="let airport of view_to_airports"
-                    [value]="airport.id"
-                    style="min-width: max-content"
-                  >
-                    <img class="airport-svg" src="{{ airport.svg }}" />
-                    <h1 class="airport-name">
-                      {{ airport.name }}
-                    </h1>
-                  </mat-option>
-                </mat-select>
-              </mat-form-field>
-            </div>
-            <div class="depart">
-              <label class="calendar"></label>
-              <mat-form-field [floatLabel]="'never'">
-                <input
-                  style="cursor: pointer; background-color: transparent"
-                  placeholder="Choose a date"
-                  matInput
-                  [matDatepicker]="picker"
-                  (click)="picker.open()"
-                  readonly
-                />
-
-                <mat-datepicker #picker></mat-datepicker>
-              </mat-form-field>
-            </div>
-          </div>
-          <div>
-            <h3>Travel details</h3>
-          </div>
-          <div class="second-row">
-            <div class="selection-description">
-              <div class="depart">
-                <mat-form-field [floatLabel]="'never'" style="width: 10rem">
-                  <mat-label>Class</mat-label>
-                  <mat-select
-                    [(value)]="selected"
-                    (selectionChange)="selectFromAirport($event.value)"
-                  >
-                    <mat-option value="1">Economy Class</mat-option>
-                    <mat-option value="2">Business Class</mat-option>
-                    <mat-option value="3">First Class</mat-option>
-                  </mat-select>
-                </mat-form-field>
+                </div>
+                <div class="depart">
+                  <label class="airplane-to"></label>
+                  <mat-form-field [floatLabel]="'never'">
+                    <mat-label>Arrival airport</mat-label>
+                    <mat-select 
+                    formControlName="to_airport"
+                    id="to_airport"
+                    (selectionChange)="selectToAirport($event.value)">
+                      <input
+                        class="airport-search"
+                        placeholder="Search"
+                      />
+                      <mat-option *ngIf="search_to_null"
+                        ><h1 class="airport-name">No airports available</h1>
+                      </mat-option>
+                      <mat-option
+                        *ngFor="let airport of view_to_airports"
+                        [value]="airport.id"
+                        style="min-width: max-content"
+                      >
+                        <img class="airport-svg" src="{{ airport.svg }}" />
+                        <h1 class="airport-name">
+                          {{ airport.name }}
+                        </h1>
+                      </mat-option>
+                    </mat-select>
+                  </mat-form-field>
+                </div>
+                <div class="depart">
+                  <label class="calendar"></label>
+                  <mat-form-field [floatLabel]="'never'">
+                    <input
+                      formControlName="date"
+                      id="date"
+                      style="cursor: pointer; background-color: transparent"
+                      placeholder="Choose a date"
+                      matInput
+                      [matDatepicker]="picker"
+                      (click)="picker.open()"
+                      readonly
+                    />
+  
+                    <mat-datepicker #picker></mat-datepicker>
+                  </mat-form-field>
+                </div>
               </div>
-              <div class="description"></div>
+              <div>
+                <h3>Travel details</h3>
+              </div>
+              <div>
+                <div class="second-row">
+                  <mat-radio-group formControlName="class"
+                            id="class"
+                            (selectionChange)="selectFromAirport($event.value)" 
+                            aria-label="Class">
+                    <mat-radio-button value="1" checked>Economy Class</mat-radio-button>
+                    <mat-radio-button value="2">Business Class</mat-radio-button>
+                    <mat-radio-button value="3">First Class</mat-radio-button> 
+                  </mat-radio-group>
+              </div>
+              </div>
+              <div class="third-row">
+                <div class="selection-description">
+                  <div class="depart">
+                    <mat-form-field [floatLabel]="'never'" style="width: 15rem">
+                      <mat-label>Adults</mat-label>
+                      <mat-select 
+                        formControlName="adults"
+                        id="adults"
+                        (selectionChange)="selectFromAirport($event.value)"
+                      >
+                        <mat-option value="1">1</mat-option>
+                        <mat-option value="2">2</mat-option>
+                        <mat-option value="3">3</mat-option>
+                        <mat-option value="3">4</mat-option>
+                        <mat-option value="3">5</mat-option>
+                        <mat-option value="3">6</mat-option>
+                        <mat-option value="3">7</mat-option>
+                        <mat-option value="3">8</mat-option>
+                        <mat-option value="3">9</mat-option>
+                      </mat-select>
+                    </mat-form-field>
+                  </div>
+                  <!-- <mat-error *ngIf="hasError('adults', 'required')">Number of Adults is required</mat-error> -->
+                  <div class="description">
+                    <p>(Age 12+ Y)</p>
+                  </div>
+                </div>
+                <div class="selection-description">
+                  <div class="depart">
+                    <mat-form-field [floatLabel]="'never'" style="width: 15rem">
+                      <mat-label>Children</mat-label>
+                      <mat-select
+                        formControlName="children"
+                        id="children"
+                        (selectionChange)="selectFromAirport($event.value)"
+                      >
+                        <mat-option value="0">0</mat-option>
+                        <mat-option value="1">1</mat-option>
+                        <mat-option value="2">2</mat-option>
+                        <mat-option value="3">3</mat-option>
+                        <mat-option value="3">4</mat-option>
+                        <mat-option value="3">5</mat-option>
+                        <mat-option value="3">6</mat-option>
+                        <mat-option value="3">7</mat-option>
+                        <mat-option value="3">8</mat-option>
+                        <mat-option value="3">9</mat-option>
+                      </mat-select>
+                      </mat-form-field>
+                  </div>
+                  <!-- <mat-error *ngIf="hasError('children', 'required')">Number of children is required</mat-error> -->
+                  <div class="description">
+                    <p>(Age 2-11 Y)</p>
+                  </div>
+                </div>
+                <div class="selection-description">
+                  <div class="depart">
+                    <mat-form-field [floatLabel]="'never'" style="width: 15rem">
+                      <mat-label>Infants</mat-label>
+                      <mat-select
+                        formControlName="infants"
+                        id="infants"
+                        (selectionChange)="selectFromAirport($event.value)"
+                      >
+                        <mat-option value="0">0</mat-option>
+                        <mat-option value="1">1</mat-option>
+                        <mat-option value="2">2</mat-option>
+                        <mat-option value="3">3</mat-option>
+                        <mat-option value="3">4</mat-option>
+                        <mat-option value="3">5</mat-option>
+                        <mat-option value="3">6</mat-option>
+                        <mat-option value="3">7</mat-option>
+                        <mat-option value="3">8</mat-option>
+                        <mat-option value="3">9</mat-option>
+                      </mat-select>
+                    </mat-form-field>
+                  </div>
+                  <!-- <mat-error *ngIf="hasError('infants', 'required')">Number of infants is required</mat-error> -->
+                  <div class="description">
+                    <p>(Age under 2 Y, on lap)</p>
+                  </div>
+                </div>
+              </div>
             </div>
-            <div class="selection-description">
-              <div class="depart">
-                <mat-form-field [floatLabel]="'never'" style="width: 10rem">
-                  <mat-label>Adults</mat-label>
-                  <mat-select
-                    (selectionChange)="selectFromAirport($event.value)"
-                  >
-                    <mat-option value="1">1</mat-option>
-                    <mat-option value="2">2</mat-option>
-                    <mat-option value="3">3</mat-option>
-                    <mat-option value="3">4</mat-option>
-                    <mat-option value="3">5</mat-option>
-                    <mat-option value="3">6</mat-option>
-                    <mat-option value="3">7</mat-option>
-                    <mat-option value="3">8</mat-option>
-                    <mat-option value="3">9</mat-option>
-                  </mat-select>
-                </mat-form-field>
-              </div>
-              <div class="description">
-                <p>(Age 12+ Y)</p>
-              </div>
-            </div>
-            <div class="selection-description">
-              <div class="depart">
-                <mat-form-field [floatLabel]="'never'" style="width: 10rem">
-                  <mat-label>Children</mat-label>
-                  <mat-select
-                    (selectionChange)="selectFromAirport($event.value)"
-                  >
-                    <mat-option value="1">1</mat-option>
-                    <mat-option value="2">2</mat-option>
-                    <mat-option value="3">3</mat-option>
-                    <mat-option value="3">4</mat-option>
-                    <mat-option value="3">5</mat-option>
-                    <mat-option value="3">6</mat-option>
-                    <mat-option value="3">7</mat-option>
-                    <mat-option value="3">8</mat-option>
-                    <mat-option value="3">9</mat-option>
-                  </mat-select>
-                </mat-form-field>
-              </div>
-              <div class="description">
-                <p>(Age 2-11 Y)</p>
-              </div>
-            </div>
-            <div class="selection-description">
-              <div class="depart">
-                <mat-form-field [floatLabel]="'never'" style="width: 10rem">
-                  <mat-label>Infants</mat-label>
-                  <mat-select
-                    (selectionChange)="selectFromAirport($event.value)"
-                  >
-                    <mat-option value="1">1</mat-option>
-                    <mat-option value="2">2</mat-option>
-                    <mat-option value="3">3</mat-option>
-                    <mat-option value="3">4</mat-option>
-                    <mat-option value="3">5</mat-option>
-                    <mat-option value="3">6</mat-option>
-                    <mat-option value="3">7</mat-option>
-                    <mat-option value="3">8</mat-option>
-                    <mat-option value="3">9</mat-option>
-                  </mat-select>
-                </mat-form-field>
-              </div>
-              <div class="description">
-                <p>(Age under 2 Y, on lap)</p>
-              </div>
-            </div>
-          </div>
-          <div class="third-row">
-            <button mat-raised-button class="search-btn">Search</button>
-          </div>
-        </div>
+          </mat-card-content>
+          <mat-card-actions style="margin: 0!important;">
+            <div class="fourth-row">
+              <button mat-raised-button class="search-btn">Search</button>
+            </div>  
+          </mat-card-actions>
+        </form>
       </mat-tab>
 
       <mat-tab [disabled]="true">

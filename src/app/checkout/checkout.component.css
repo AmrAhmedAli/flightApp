@@ -1,0 +1,42 @@
+.secondary-page {
+  display: flex;
+  flex-direction: column;
+  margin-top: 7rem;
+  margin-left: 10%;
+  margin-right: 10%;
+}
+.row{
+  width:100%;
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 30px;
+}
+.mat-input-element:disabled{
+  color: #333;
+}
+.booking-summary{
+  border-top-right-radius: 20px;
+  border-top-left-radius: 20px;
+  background-color: #0000ff10;
+  padding: 20px;
+}
+.basic-details{
+  border-bottom-right-radius: 20px;
+  border-bottom-left-radius: 20px;
+  border: 2px solid #0000ff10;
+  padding: 20px;
+}
+.search-btn {
+  color: white;
+  background-color:  rgba(15, 20, 67, 1);
+  width: 13rem;
+}
+.fourth-row {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  flex-wrap: wrap;
+}
+.display-none{
+  display: none;
+}

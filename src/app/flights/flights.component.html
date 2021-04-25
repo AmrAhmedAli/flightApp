@@ -49,7 +49,7 @@
         </mat-card-content>
       </mat-card>
       <div class="categories">
-        <mat-card class="category-card">
+        <mat-card class="category-card" (click)="goToCheckout(trip.id, 'Economy')">
           <mat-card-header class="category-header">
             <mat-card-title class="category-card-title">Economy</mat-card-title>
           </mat-card-header>
@@ -62,7 +62,7 @@
             </div>
           </mat-card-content>
         </mat-card>
-        <mat-card class="category-card-business">
+        <mat-card class="category-card-business" (click)="goToCheckout(trip.id, 'Business')">
           <mat-card-header class="category-header">
             <mat-card-title class="category-card-title-business"
               >Business</mat-card-title
@@ -77,7 +77,7 @@
             </div>
           </mat-card-content>
         </mat-card>
-        <mat-card class="category-card-first">
+        <mat-card class="category-card-first" (click)="goToCheckout(trip.id, 'First')">
           <mat-card-header class="category-header">
             <mat-card-title class="category-card-title-first"
               >First</mat-card-title

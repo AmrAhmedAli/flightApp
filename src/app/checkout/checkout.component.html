@@ -1,0 +1,97 @@
+<div class="secondary-page">
+  <div class="booking-summary">
+    <h2>Booking Summary</h2>
+    <form class="example-form">
+      <div class="row">
+        <mat-form-field class="example-full-width">
+          <mat-label>From Airport</mat-label>
+          <input matInput disabled value="{{bookingDetails.trip.from_airport}}">
+        </mat-form-field>
+        <mat-form-field class="example-full-width">
+          <mat-label>To Airport</mat-label>
+          <input matInput disabled value="{{bookingDetails.trip.to_airport}}">
+        </mat-form-field>
+        <mat-form-field class="example-full-width">
+          <mat-label>Date</mat-label>
+          <input matInput disabled value="{{bookingDetails.trip.date}}">
+        </mat-form-field>
+        <mat-form-field class="example-full-width">
+          <mat-label>Class</mat-label>
+          <input matInput disabled value="{{bookingDetails.classFlag}}">
+        </mat-form-field>
+      </div>
+     
+      <div class="row">
+        <mat-form-field class="example-full-width">
+          <mat-label>Adults</mat-label>
+          <input matInput disabled value="{{bookingDetails.searchCriteria.adults}}">
+        </mat-form-field>
+        <mat-form-field class="example-full-width">
+          <mat-label>Children</mat-label>
+          <input matInput disabled value="{{bookingDetails.searchCriteria.children}}">
+        </mat-form-field>
+        <mat-form-field class="example-full-width">
+          <mat-label>Infants</mat-label>
+          <input matInput disabled value="{{bookingDetails.searchCriteria.infants}}">
+        </mat-form-field>
+        <mat-form-field class="example-full-width">
+          <mat-label>Ticket Price</mat-label>
+          <input matInput disabled value="{{bookingDetails.ticketPrice}}">
+        </mat-form-field>
+      </div>
+
+      <div class="row">
+        <mat-form-field class="example-full-width">
+          <mat-label>Adults Total</mat-label>
+          <input matInput disabled value="{{bookingDetails.adultsTotal}}">
+        </mat-form-field>
+        <mat-form-field class="example-full-width">
+          <mat-label>Children Total</mat-label>
+          <input matInput disabled value="{{bookingDetails.childrenTotal}}">
+        </mat-form-field>
+        <mat-form-field class="example-full-width">
+          <mat-label>Infants</mat-label>
+          <input matInput disabled value="{{bookingDetails.infantsTotal}}">
+        </mat-form-field>
+        <mat-form-field class="example-full-width">
+          <mat-label>Total Price</mat-label>
+          <input matInput disabled value="{{bookingDetails.totalPrice}}">
+        </mat-form-field>
+      </div>
+    </form>
+  </div>
+  
+  <div class="basic-details">
+    <h2 style="margin-bottom: 20px;">Basic Details</h2>
+    <form class="basic-form" [formGroup]="basicForm" (ngSubmit)="checkout(basicForm.value)">
+      <mat-card-content>
+        <div class="row">
+          <mat-form-field class="example-full-width">
+            <mat-label>First Name</mat-label>
+            <input matInput formControlName="firstName" id="firstName">
+          </mat-form-field>
+          <mat-form-field class="example-full-width">
+            <mat-label>Last Name</mat-label>
+            <input matInput formControlName="lastName" id="lastName">
+          </mat-form-field>
+          <mat-form-field class="example-full-width">
+            <mat-label>Middle Name</mat-label>
+            <input matInput formControlName="middleName" id="middleName">
+          </mat-form-field>
+          <mat-form-field class="example-full-width">
+            <mat-label>Salutation</mat-label>
+            <input matInput formControlName="salutation" id="salutation">
+          </mat-form-field>
+        </div>
+      </mat-card-content>
+      <mat-card-actions style="margin: 0!important;">
+        <div class="fourth-row">
+          <button mat-raised-button class="search-btn">Checkout</button>
+        </div>  
+      </mat-card-actions>
+    </form>
+  </div>
+  <div id = "success-message" class="display-none">
+    You have Successfully Booked 
+  </div>
+</div>

@@ -10,6 +10,7 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatMenuModule } from '@angular/material/menu';
 import { MatIconModule } from '@angular/material/icon';
 import { MatCardModule } from '@angular/material/card';
+import {MatRadioModule} from '@angular/material/radio';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MatSelectModule } from '@angular/material/select';
 import { HttpClientModule } from '@angular/common/http';
@@ -20,10 +21,13 @@ import { MatNativeDateModule } from '@angular/material/core';
 import { MatTabsModule } from '@angular/material/tabs';
 import { FlightsComponent } from './flights/flights.component';
 import { MatChipsModule } from '@angular/material/chips';
+import { CommonModule } from '@angular/common';
+import { CheckoutComponent } from './checkout/checkout.component';
 
 @NgModule({
-  declarations: [AppComponent, HomeComponent, FlightsComponent],
+  declarations: [AppComponent, HomeComponent, FlightsComponent, CheckoutComponent],
   imports: [
+    CommonModule,
     BrowserModule,
     BrowserAnimationsModule,
     AppRoutingModule,
@@ -41,10 +45,12 @@ import { MatChipsModule } from '@angular/material/chips';
     HttpClientModule,
     MatInputModule,
     MatTabsModule,
+    MatRadioModule,
     RouterModule.forRoot([
       { path: '', component: HomeComponent },
       { path: 'home', component: HomeComponent },
       { path: 'flights', component: FlightsComponent },
+      { path: 'checkout', component: CheckoutComponent }
     ]),
   ],
   exports: [MatFormFieldModule, MatInputModule],

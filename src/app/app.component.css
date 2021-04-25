@@ -13,21 +13,33 @@ header {
   top: 0;
   right: 0;
   z-index: 17;
-  box-shadow: 1px 1px 10px #000;
+  border-bottom: solid 1px #bbb;
 }
 .logo {
   width: 4rem;
-  filter: drop-shadow(2px 4px 6px black);
+  margin-right: 20px;
+  margin-left: 20px;
 }
 .col-content {
   width: 100%;
-  margin-left: 20%;
-  margin-right: 20%;
+  margin-left: 10%;
+  margin-right: 10%;
+  display: flex;
+  justify-content: left;
+}
+.logo-wrapper{
+  font-size: 2rem;
+  display: flex;
+  align-items: center;
+  background-color: rgba(15, 20, 67, 0.9);
+  color: white;
+  padding-right: 20px;
+  border-bottom: solid 3px #FFC65A;
+  font-family: 'Helvetica', 'Arial', sans-serif;
+  cursor: pointer;
 }
 .secondary-page {
   display: flex;
   flex-direction: column;
   margin-top: 7rem;
-  margin-left: 10%;
-  margin-right: 10%;
 }

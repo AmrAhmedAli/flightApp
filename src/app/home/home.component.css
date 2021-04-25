@@ -1,9 +1,7 @@
 .secondary-page {
   display: flex;
   flex-direction: column;
-  margin-top: 7rem;
-  margin-left: 10%;
-  margin-right: 10%;
+  margin-top: 50px;
 }
 .main-container {
   display: flex;
@@ -26,7 +24,19 @@
   flex-wrap: wrap;
   margin-bottom: 4rem;
 }
+.second-row mat-radio-group{
+  display: flex;
+  justify-content: space-around;
+  width: 100%;
+  margin-top: 20px;
+}
 .third-row {
+  display: flex;
+  flex-direction: column;
+  align-items: left;
+  margin-bottom: 4rem;
+}
+.fourth-row {
   display: flex;
   flex-direction: row;
   justify-content: flex-end;
@@ -34,7 +44,7 @@
 }
 .search-btn {
   color: white;
-  background-color: rgb(211, 6, 6);
+  background-color:  rgba(15, 20, 67, 1);
   width: 13rem;
 }
 .title__heading {
@@ -92,6 +102,7 @@
   justify-content: center;
   font-size: x-small;
   margin-top: -1rem !important;
+  width: 15rem;
 }
 .airplane-from {
   background: url(/assets/from_plane.png) center center no-repeat;
@@ -148,5 +159,34 @@
 }
 ::ng-deep .mat-tab-group.mat-primary .mat-ink-bar,
 .mat-tab-nav-bar.mat-primary .mat-ink-bar {
-  background-color: rgb(211, 6, 6);
+  background-color: #FFC65A;
+}
+
+.error-message{
+  display: none;
+}
+
+.search{
+  margin-left: 15%;
+  margin-right: 15%;
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
+  border-top-left-radius: 0;
+  border-top-right-radius: 20px;
+}
+.book-title{
+  margin-left: 15%;
+  margin-right: 15%;
+  padding: 10px;
+  background-color: rgba(15, 20, 67, 1);
+  color: white;
+  font-size: 1.5rem;
+  margin-top: -120px;
+  width:150px;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+}
+
+mat-error{
+  margin-bottom: 10px;
 }
