@@ -5,6 +5,7 @@ import * as data from '../data/trips.json';
 import * as airports from '../data/airports.json';
 import { Airport, SearchCriteria } from '../home/home.component';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { BookingDetails } from '../flights/flights.component';
 export interface Trips {
   id: number;
   from_id: number;
@@ -22,11 +23,6 @@ export interface Trips {
   first_price: string;
   plane: string;
 }
-export interface BookingDetails{
-  searchCriteria: SearchCriteria;
-  trip: Trips;
-  classFlag: String;
-}
 @Component({
   selector: 'app-checkout',
   templateUrl: './checkout.component.html',
@@ -40,7 +36,7 @@ export class CheckoutComponent implements OnInit {
   airports: Airport[] = airports.data;
   view_trips: Trips[];
   searchCriteria: SearchCriteria;
-  bookingDetails: BookingDetails;
+  bookingDetails: BookingDetails = <BookingDetails>{};
   basicForm: FormGroup;
   
   constructor( private activatedRoute: ActivatedRoute) {}
@@ -52,7 +48,9 @@ export class CheckoutComponent implements OnInit {
       lastName: new FormControl('', [Validators.required]),
       salutation: new FormControl('', [Validators.required])
     });
-
+    // this.bookingDetails.trip = <Trips>{};
+    // this.bookingDetails.searchCriteria = <SearchCriteria>{};
+    // this.bookingDetails.
     this.activatedRoute.paramMap.pipe(map(() => window.history.state)).subscribe(data => { this.bookingDetails = data });
     console.log("Booking Summary", this.bookingDetails);
     
